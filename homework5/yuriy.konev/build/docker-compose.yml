@@ -1,0 +1,5 @@
+version: '3'
+services:
+    shell-calculator:
+        build: ../../../homework4/yuriy.konev
+        image: yorix/shell-calculator

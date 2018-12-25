@@ -1,0 +1,7 @@
+version: '3'
+services:
+    shell-calculator:
+        image: yorix/shell-calculator
+        container_name: shell-calculator
+        tty: true
+        stdin_open: true
