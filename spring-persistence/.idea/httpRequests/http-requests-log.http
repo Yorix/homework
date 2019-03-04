@@ -1,0 +1,314 @@
+GET http://localhost:8080/students
+
+<> 2019-03-04T115717.200.json
+
+###
+
+GET http://localhost:8080/students
+
+<> 2019-03-04T113916.200.json
+
+###
+
+PUT http://localhost:8080/students/5
+
+Kolya
+
+<> 2019-03-04T113911.404.json
+
+###
+
+GET http://localhost:8080/students
+
+<> 2019-03-04T113904.200.json
+
+###
+
+DELETE http://localhost:8080/students/1
+
+<> 2019-03-04T113901.404.json
+
+###
+
+DELETE http://localhost:8080/students/5
+
+###
+
+GET http://localhost:8080/students
+
+<> 2019-03-04T113842.200.json
+
+###
+
+DELETE http://localhost:8080/students/1
+
+<> 2019-03-04T113839.404.json
+
+###
+
+GET http://localhost:8080/students/6
+
+<> 2019-03-04T113833.200.json
+
+###
+
+PUT http://localhost:8080/students/5
+
+Kolya
+
+<> 2019-03-04T113821.200.json
+
+###
+
+GET http://localhost:8080/students
+
+<> 2019-03-04T113811.200.json
+
+###
+
+POST http://localhost:8080/students
+
+Vasya
+
+<> 2019-03-04T113807.201.json
+
+###
+
+GET http://localhost:8080/students
+
+<> 2019-03-04T113759.200.json
+
+###
+
+PUT http://localhost:8080/students/1
+
+Kolya
+
+<> 2019-03-04T113754.404.json
+
+###
+
+DELETE http://localhost:8080/students/1
+
+<> 2019-03-04T113747.404.json
+
+###
+
+DELETE http://localhost:8080/students/1
+
+###
+
+GET http://localhost:8080/students/4
+
+<> 2019-03-04T113728.200.json
+
+###
+
+GET http://localhost:8080/students/1
+
+<> 2019-03-04T113722.200.json
+
+###
+
+GET http://localhost:8080/students
+
+<> 2019-03-04T113712.200.json
+
+###
+
+PUT http://localhost:8080/students/1
+
+Kolya
+
+<> 2019-03-04T113709.200.json
+
+###
+
+POST http://localhost:8080/students
+
+Vasya
+
+<> 2019-03-04T113703.201.json
+
+###
+
+GET http://localhost:8080/students
+
+###
+
+GET http://localhost:8080/students
+
+###
+
+GET http://localhost:8080/students
+
+<> 2019-03-04T113548.200.json
+
+###
+
+POST http://localhost:8080/students
+
+Vasya
+
+<> 2019-03-04T113542.201.json
+
+###
+
+GET http://localhost:8080/students
+
+<> 2019-03-04T113534.200.json
+
+###
+
+POST http://localhost:8080/students
+
+Vasya
+
+<> 2019-02-27T110954.201.json
+
+###
+
+DELETE http://localhost:8080/students/1
+
+<> 2019-02-26T040548.404.json
+
+###
+
+GET http://localhost:8080/students/1
+
+<> 2019-02-26T040539.404.json
+
+###
+
+PUT http://localhost:8080/students/1
+
+Kolya
+
+<> 2019-02-26T040535.404.json
+
+###
+
+POST http://localhost:8080/students
+
+Vasya
+
+<> 2019-02-26T040532.201.json
+
+###
+
+PUT http://localhost:8080/students/1
+
+Kolya
+
+<> 2019-02-26T040526.404.json
+
+###
+
+DELETE http://localhost:8080/students/1
+
+###
+
+GET http://localhost:8080/students
+
+<> 2019-02-26T040515.200.json
+
+###
+
+GET http://localhost:8080/students
+
+<> 2019-02-26T035754.200.json
+
+###
+
+PUT http://localhost:8080/students/1
+
+Kolya
+
+<> 2019-02-26T035747.404.json
+
+###
+
+GET http://localhost:8080/students/1
+
+<> 2019-02-26T035742.404.json
+
+###
+
+DELETE http://localhost:8080/students/1
+
+<> 2019-02-26T035734.404.json
+
+###
+
+DELETE http://localhost:8080/students/1
+
+###
+
+GET http://localhost:8080/students/1
+
+<> 2019-02-26T035727.200.json
+
+###
+
+GET http://localhost:8080/students
+
+<> 2019-02-26T035718.200.json
+
+###
+
+PUT http://localhost:8080/students/1
+
+Kolya
+
+<> 2019-02-26T035712.200.json
+
+###
+
+POST http://localhost:8080/students
+
+Vasya
+
+<> 2019-02-26T035708.201.json
+
+###
+
+GET http://localhost:8080/students
+
+<> 2019-02-26T035701.200.json
+
+###
+
+GET http://localhost:8080/students
+
+<> 2019-02-26T035037.200.json
+
+###
+
+PUT http://localhost:8080/students/1
+
+Kolya
+
+<> 2019-02-26T035028.200.json
+
+###
+
+GET http://localhost:8080/students/1
+
+<> 2019-02-26T035018.404.json
+
+###
+
+GET http://localhost:8080/students
+
+<> 2019-02-26T035011.200.json
+
+###
+
+DELETE http://localhost:8080/students/1
+
+###
+
+DELETE http://localhost:8080/students/1
+
+###
+

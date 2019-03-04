@@ -7,9 +7,9 @@ public interface StudentsService {
 
     Student read(int id);
 
-    Student create(Student student);
+    void create(Student student);
 
-    Student update(Student student);
+    void update(Student student);
 
-    int delete(int id);
+    void delete(int id);
 }

@@ -5,13 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class StudentsInMemoryService implements StudentsService {
+public class StudentsInMemoryDao implements StudentsDao {
     private Map<Integer, Student> studentsMap = new HashMap<>();
     private int id;
-
-    StudentsInMemoryService(List<Student> predefinedStudents) {
-        predefinedStudents.forEach(this::create);
-    }
 
     @Override
     public List<Student> readAll() {
@@ -31,9 +27,9 @@ public class StudentsInMemoryService implements StudentsService {
     }
 
     @Override
-    public Student update(Student student) {
-        studentsMap.put(student.getId(), student);
-        return student;
+    public int update(Student student) {
+        student = studentsMap.put(student.getId(), student);
+        return student != null ? 1 : 0;
     }
 
     @Override

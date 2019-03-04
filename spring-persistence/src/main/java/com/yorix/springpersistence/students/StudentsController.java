@@ -18,7 +18,7 @@ public class StudentsController {
     private StudentsService studentsService;
 
     @Autowired
-    public StudentsController(@Qualifier("studentsJdbcService") StudentsService studentsService) {
+    public StudentsController(@Qualifier("studentsServiceImpl") StudentsService studentsService) {
         this.studentsService = studentsService;
     }
 

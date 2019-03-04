@@ -1,6 +1,5 @@
 package com.yorix.springpersistence.students;
 
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -22,14 +21,14 @@ public class StudentsConfiguration {
 //    }
 
     @Bean
-    public StudentsService studentsInMemoryService() {
-        return new StudentsInMemoryService(predefinedStudents());
+    public StudentsDao studentsInMemoryDao() {
+        return new StudentsInMemoryDao();
     }
 
     @Bean
     @Primary
-    public StudentsService studentsJdbcService(JdbcTemplate jdbcTemplate) {
-        return new StudentsJdbcService(jdbcTemplate, predefinedStudents());
+    public StudentsDao studentsJdbcDao(JdbcTemplate jdbcTemplate) {
+        return new StudentsJdbcDao(jdbcTemplate);
     }
 
     @Bean
