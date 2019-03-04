@@ -1,0 +1,6 @@
+DROP SCHEMA IF EXISTS school;
+CREATE SCHEMA school;
+USE school;
+CREATE TABLE students(
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(50));
