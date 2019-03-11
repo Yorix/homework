@@ -1,4 +1,6 @@
-package com.yorix.springpersistence.students;
+package com.yorix.springpersistence.storage;
+
+import com.yorix.springpersistence.students.Student;
 
 import java.util.List;
 

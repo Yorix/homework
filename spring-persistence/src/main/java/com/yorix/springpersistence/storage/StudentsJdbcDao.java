@@ -1,5 +1,6 @@
-package com.yorix.springpersistence.students;
+package com.yorix.springpersistence.storage;
 
+import com.yorix.springpersistence.students.Student;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -8,7 +9,7 @@ import java.util.List;
 public class StudentsJdbcDao implements StudentsDao {
     private JdbcTemplate jdbcTemplate;
 
-    StudentsJdbcDao(JdbcTemplate jdbcTemplate) {
+    public StudentsJdbcDao(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 

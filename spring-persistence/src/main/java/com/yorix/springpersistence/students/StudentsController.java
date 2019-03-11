@@ -4,7 +4,6 @@ import lombok.Data;
 import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -65,12 +64,7 @@ public class StudentsController {
 
     @ExceptionHandler
     public ResponseEntity<ErrorMessage> errorHandle(Exception e) {
-        ErrorMessage errorMessage;
-        if (e instanceof EmptyResultDataAccessException) {
-            errorMessage = new ErrorMessage("No such resource");
-        } else {
-            errorMessage = new ErrorMessage(e.getMessage());
-        }
+        ErrorMessage errorMessage = new ErrorMessage("No such resource");
 
         return ResponseEntity
                 .status(HttpStatus.NOT_FOUND)

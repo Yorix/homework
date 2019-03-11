@@ -1,10 +1,16 @@
 package com.yorix.springpersistence.students;
 
+import com.yorix.springpersistence.storage.StudentsDao;
+import com.yorix.springpersistence.storage.StudentsHibernateDao;
+import com.yorix.springpersistence.storage.StudentsInMemoryDao;
+import com.yorix.springpersistence.storage.StudentsJdbcDao;
+import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.orm.hibernate5.HibernateTransactionManager;
 
+import javax.persistence.EntityManagerFactory;
 import java.util.List;
 
 @Configuration
@@ -26,10 +32,20 @@ public class StudentsConfiguration {
     }
 
     @Bean
-    @Primary
+//    @Primary
     public StudentsDao studentsJdbcDao(JdbcTemplate jdbcTemplate) {
         return new StudentsJdbcDao(jdbcTemplate);
     }
+
+    @Bean
+    public StudentsDao studentsHibernateDao() {
+        return new StudentsHibernateDao();
+    }
+
+//    @Bean
+//    public HibernateTransactionManager hibernateTransactionManager(EntityManagerFactory entityManagerFactory) {
+//        return new HibernateTransactionManager(entityManagerFactory.unwrap(SessionFactory.class));
+//    }
 
     @Bean
     public List<Student> predefinedStudents() {
