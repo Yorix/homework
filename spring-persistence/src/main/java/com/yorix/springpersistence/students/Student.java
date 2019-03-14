@@ -13,7 +13,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class Student {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Integer id;
     @NonNull
     @Column(name = "name")

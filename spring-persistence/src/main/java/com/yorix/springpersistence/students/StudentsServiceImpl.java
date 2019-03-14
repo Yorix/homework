@@ -6,12 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
+import javax.sql.DataSource;
 import java.util.List;
 
 @Service
 public class StudentsServiceImpl implements StudentsService {
     private final StudentsDao studentsDao;
     private final StudentsRepository studentsRepository;
+    private final DataSource dataSource;
 
     @Autowired
     StudentsServiceImpl(
@@ -19,9 +21,13 @@ public class StudentsServiceImpl implements StudentsService {
 //            @Qualifier("studentsInMemoryDao") StudentsDao studentsDao,
 //            @Qualifier("studentsHibernateDao") StudentsDao studentsDao,
             StudentsRepository studentsRepository,
-            List<Student> predefinedStudents) {
+            List<Student> predefinedStudents,
+            DataSource dataSource
+    ) {
         this.studentsDao = null; // = studentsDao;
         this.studentsRepository = studentsRepository;
+        this.dataSource = dataSource;
+
         predefinedStudents.forEach(this::create);
     }
 
@@ -56,11 +62,25 @@ public class StudentsServiceImpl implements StudentsService {
             if (rows != 1)
                 throw new EmptyResultDataAccessException(1);
         } else {
-            studentsRepository.findById(student.getId())
-                    .orElseGet(() -> {
-                        throw new EmptyResultDataAccessException(1);
-                    });
 
+//            String sql = "update student s set s.name = ? where s.id = ?";
+//            try (Connection connection = dataSource.getConnection();
+//                 PreparedStatement ps = connection.prepareStatement(sql)) {
+//
+//                ps.setString(1, student.getName());
+//                ps.setInt(2, student.getId());
+//
+//                int rows = ps.executeUpdate();
+//                if (rows != 1)
+//                    throw new EmptyResultDataAccessException(1);
+//            } catch (SQLException e) {
+//                e.printStackTrace();
+//            }
+
+
+            studentsRepository.findById(student.getId()).orElseGet(() -> {
+                throw new EmptyResultDataAccessException(1);
+            });
             studentsRepository.saveAndFlush(student);
         }
     }
