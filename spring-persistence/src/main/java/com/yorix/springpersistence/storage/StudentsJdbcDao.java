@@ -16,11 +16,11 @@ public class StudentsJdbcDao implements StudentsDao {
     @Override
     public Student create(Student student) {
         jdbcTemplate.update(
-                "INSERT INTO `students`(`name`) VALUES (?)",
+                "INSERT INTO `student`(`name`) VALUES (?)",
                 student.getName()
         );
         Integer id = jdbcTemplate.queryForObject(
-                "SELECT `id` FROM `students` ORDER BY `id` DESC LIMIT 1", Integer.TYPE
+                "SELECT `id` FROM `student` ORDER BY `id` DESC LIMIT 1", Integer.TYPE
         );
         student.setId(id);
         return student;
@@ -28,18 +28,18 @@ public class StudentsJdbcDao implements StudentsDao {
 
     @Override
     public Student read(int id) {
-        return jdbcTemplate.queryForObject("SELECT `id`, `name` FROM `students` WHERE `id` = ?", new BeanPropertyRowMapper<>(Student.class), id);
+        return jdbcTemplate.queryForObject("SELECT `id`, `name` FROM `student` WHERE `id` = ?", new BeanPropertyRowMapper<>(Student.class), id);
     }
 
     @Override
     public List<Student> readAll() {
-        return jdbcTemplate.query("SELECT `id`, `name` FROM `students`", new BeanPropertyRowMapper<>(Student.class));
+        return jdbcTemplate.query("SELECT `id`, `name` FROM `student`", new BeanPropertyRowMapper<>(Student.class));
     }
 
     @Override
     public int update(Student student) {
         return jdbcTemplate.update(
-                "UPDATE `students` SET `name` = ? WHERE `id` = ?",
+                "UPDATE `student` SET `name` = ? WHERE `id` = ?",
                 student.getName(),
                 student.getId()
         );
@@ -47,6 +47,6 @@ public class StudentsJdbcDao implements StudentsDao {
 
     @Override
     public int delete(int id) {
-        return jdbcTemplate.update("DELETE FROM `students` WHERE `id` = ?", id);
+        return jdbcTemplate.update("DELETE FROM `student` WHERE `id` = ?", id);
     }
 }
